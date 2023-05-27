@@ -1,0 +1,36 @@
+﻿<Window x:Class="yjrthergwef.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:yjrthergwef"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ListView Name="Messages" Margin="0,0,0,162">
+            <ListView.ItemTemplate>
+
+                <DataTemplate>
+
+                    <StackPanel >
+                        <StackPanel.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Click="MenuItem_Click" Header="вЫБЕРИ"/>
+                            </ContextMenu>
+                        </StackPanel.ContextMenu>
+                        <Image Source="{Binding Photo}" Width="50" Height="50"/>
+                        <TextBlock Text="{Binding Path=Familiya,StringFormat='Фамилия: {0}'}" Foreground="Black"/>
+                        <TextBlock Text="{Binding Path=Ima,StringFormat='ИМ: {0}'}" Foreground="Black"/>
+                        <TextBlock Text="{Binding Path=Otchestvo,StringFormat='ОТЧЕСТО: {0}'}" Foreground="Black"/>
+                        <TextBlock Text="{Binding Path=ID_User,StringFormat='АЙДИ: {0}'}" Foreground="Black"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBox x:Name="aboba" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="Black" Width="200" Height="50" FontSize="20" Background="Gray"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="Black" Width="200" Content="дОБАВЬ" Height="50" FontSize="20" Background="Gray" Click="Button_Click"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Black" Width="200" Content="иЗМЕНИ" Height="50" FontSize="20" Background="Gray" Click="Button_Click_1" Margin="0,297,0,0"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="Black" Width="200" Content="уДАЛИ" Height="50" FontSize="20" Background="Gray" Click="Button_Click_2" Margin="238,0,0,87"/>
+        <ComboBox x:Name="Images" HorizontalAlignment="Left" Margin="609,359,0,0" VerticalAlignment="Top" Width="120"/>
+    </Grid>
+</Window>
